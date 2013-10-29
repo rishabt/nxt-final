@@ -1,1 +1,1 @@
-bin/compile && nxjupload -r FinalProject.nxj
+bin/compile && nxjupload -r $1.nxj
