@@ -1,0 +1,1 @@
+bin/compile && nxjupload -r FinalProject.nxj
