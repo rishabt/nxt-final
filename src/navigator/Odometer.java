@@ -1,4 +1,4 @@
-package Lab4;
+package Navigator;
 import lejos.util.Timer;
 import lejos.util.TimerListener;
 
