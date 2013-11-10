@@ -1,3 +1,5 @@
+package gamer;
+
 public class UltrasonicReading {
 	
 	public int distance = 255, angle = 0;

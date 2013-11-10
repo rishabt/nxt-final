@@ -1,3 +1,5 @@
+package gamer;
+
 import lejos.util.*;
 import lejos.nxt.*;
 

@@ -9,7 +9,7 @@ public class Communicator {
 	protected DataOutputStream outStream;
 	
 	public Communicator(BTConnection connection) {
-		LCD.drawString("Connecting...", 0, 0);
+		LCD.drawString("connecting...", 0, 1);
 		if (connection == null) {
 			LCD.clear();
 			LCD.drawString("ERROR: connection failed", 0, 1);
@@ -19,6 +19,7 @@ public class Communicator {
 		this.connection = connection;
 		this.inStream = connection.openDataInputStream();
 		this.outStream = connection.openDataOutputStream();
+		LCD.clear();
 	}
 	
 	public void bluetoothClose() {
@@ -33,12 +34,19 @@ public class Communicator {
 		try {
 			outStream.writeUTF(message);
 			outStream.flush();
-		} catch (IOException e) {}
+		} catch (IOException e) {
+			LCD.clear();
+			LCD.drawString("ERROR", 0, 0);
+			LCD.drawString("msg not sent", 0, 1);
+		}
 	}
 	
 	public String bluetoothReceive() {
 		String message = "";
-		try { message = inStream.readUTF(); } catch (IOException e) {}
+		try { message = inStream.readUTF(); } catch (IOException e) {
+			LCD.drawString("ERROR", 0, 0);
+			LCD.drawString("no msg", 0, 1);
+		}
 		return message;
 	}
 }

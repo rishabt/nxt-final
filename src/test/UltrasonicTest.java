@@ -1,4 +1,5 @@
 import lejos.nxt.*;
+import gamer.*;
 
 public class UltrasonicTest {
 
