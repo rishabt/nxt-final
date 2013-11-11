@@ -1,4 +1,4 @@
-package Navigator;
+package navigator;
 
 import lejos.nxt.LCD;
 import lejos.util.Timer;
